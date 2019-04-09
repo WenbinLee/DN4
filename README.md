@@ -12,6 +12,7 @@ We provide a PyTorch implementation of DN4 for few-shot learning. If you use thi
 - Python 3
 - Pytorch 0.4 or 1.0
 - GPU + CUDA CuDNN
+- pillow, torchvision, scipy, numpy
 
 ## Getting Started
 ### Installation
