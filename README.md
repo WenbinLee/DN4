@@ -47,7 +47,7 @@ python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_ResNet256F_5Way
 ```
 
 - The results on the miniImageNet dataset: 
-<img src='imgs/Results_miniImageNet.bmp' align="center" width=800>
+<img src='imgs/Results_miniImageNet2.bmp' align="center" width=800>
 
 
 ###  Fine-grained Few-shot Classification
