@@ -42,9 +42,9 @@ python DN4_Train_5way1shot_Resnet.py --dataset_dir ./datasets/miniImageNet --dat
 ```
 - Test the model (specify the dataset_dir, basemodel, and data_name first):
 ```bash
-python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_Conv64F_5Way_1Shot_K3/model_best.pth.tar
+python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_Conv64F_5Way_1Shot_K3/model_best.pth.tar --basemodel Conv64F
 or
-python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_ResNet256F_5Way_1Shot_K3/model_best.pth.tar
+python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_ResNet256F_5Way_1Shot_K3/model_best.pth.tar --basemodel ResNet256F
 ```
 
 - The results on the miniImageNet dataset (If you set neighbor_k as 1, you may get better results in some cases): 
