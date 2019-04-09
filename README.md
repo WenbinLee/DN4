@@ -46,7 +46,7 @@ or
 python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_ResNet256F_5Way_1Shot_K3/model_best.pth.tar
 ```
 
-- The results on the miniImageNet dataset: 
+- The results on the miniImageNet dataset (If you set neighbor_k as 1, you may get better results in some cases): 
 <img src='imgs/Results_miniImageNet2.bmp' align="center" width=800>
 
 
