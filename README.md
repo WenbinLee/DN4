@@ -47,7 +47,7 @@ python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_ResNet256F_5Way
 ```
 
 - The results on the miniImageNet dataset (If you set neighbor_k as 1, you may get better results in some cases): 
-<img src='imgs/Results_miniImageNet2.bmp' align="center" width=800>
+<img src='imgs/Results_miniImageNet2.bmp' align="center" width=900>
 
 
 ###  Fine-grained Few-shot Classification
@@ -67,7 +67,7 @@ python DN4_Train_5way1shot.py --dataset_dir ./datasets/StanfordDog --data_name S
 python DN4_Test_5way1shot.py --resume ./results/DN4_StanfordDog_Conv64F_5_Way_1_Shot/model_best.pth.tar
 ```
 - The results on the fine-grained datasets: 
-<img src='imgs/Results_finegrained.bmp' align="center" width=800>
+<img src='imgs/Results_finegrained.bmp' align="center" width=900>
 
 
 
