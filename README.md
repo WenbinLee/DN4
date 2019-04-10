@@ -23,7 +23,7 @@ git clone https://github.com/WenbinLee/DN4
 cd DN4
 ```
 
-- Install [PyTorch](http://pytorch.org) 1.0 and other dependencies (e.g., torchvision).
+- Install [PyTorch](http://pytorch.org) 1.0 and other dependencies.
 
 ### Datasets
 - [miniImageNet](https://drive.google.com/file/d/1fUBrpv8iutYwdL4xE1rX_R9ef6tyncX9/view). 
