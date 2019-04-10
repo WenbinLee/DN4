@@ -56,8 +56,8 @@ python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_ResNet256F_5Way
  - Specify the path of the dataset and the saving path.
  - Run the preprocessing script.
 ```bash
-#!./dataset/StanfordDog/StanfordDog_prepare_csv.py
-python ./dataset/StanfordDog/StanfordDog_prepare_csv.py
+#!./dataset/StanfordDog_prepare_csv.py
+python ./dataset/StanfordDog_prepare_csv.py
 ```
 - Train a 5-way 1-shot model:
 ```bash
@@ -65,7 +65,7 @@ python DN4_Train_5way1shot.py --dataset_dir ./datasets/StanfordDog --data_name S
 ```
 - Test the model (specify the dataset_dir and data_name first):
 ```bash
-python DN4_Test_5way1shot.py --resume ./results/DN4_StanfordDog_Conv64F_5_Way_1_Shot/model_best.pth.tar
+python DN4_Test_5way1shot.py --resume ./results/DN4_StanfordDog_Conv64F_5_Way_1_Shot/model_best.pth.tar --basemodel Conv64F
 ```
 - The results on the fine-grained datasets: 
 <img src='imgs/Results_finegrained.bmp' align="center" width=900>
