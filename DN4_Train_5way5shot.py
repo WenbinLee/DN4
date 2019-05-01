@@ -396,8 +396,8 @@ for epoch_item in range(opt.epochs):
 
 
 	# =========================================== Evaluation ==========================================
-	print('============ Validation in the val ============')
-	print('============ validation in the val ============', file=F_txt)
+	print('============ Validation on the val set ============')
+	print('============ validation on the val set ============', file=F_txt)
 	prec1, _ = validate(val_loader, model, criterion, epoch_item, best_prec1, F_txt)
 
 
@@ -430,8 +430,8 @@ for epoch_item in range(opt.epochs):
 
 	
 	# Testing Prase
-	print('============ Testing in the test ============')
-	print('============ Testing in the test ============', file=F_txt)
+	print('============ Testing on the test set ============')
+	print('============ Testing on the test set ============', file=F_txt)
 	prec1, _ = validate(test_loader, model, criterion, epoch_item, best_prec1, F_txt)
 
 
