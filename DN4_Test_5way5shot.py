@@ -269,6 +269,7 @@ repeat_num = 5       # repeat running the testing code several times
 
 
 total_accuracy = 0.0
+total_h = np.zeros(repeat_num)
 total_accuracy_vector = []
 for r in range(repeat_num):
 	print('===================================== Round %d =====================================' %r)
@@ -307,11 +308,12 @@ for r in range(repeat_num):
 	print("Test accuracy", test_accuracy, "h", h[0], file=F_txt)
 	total_accuracy += test_accuracy
 	total_accuracy_vector.extend(accuracies)
+	total_h[r] = h
 
 
-aver_accuracy, aver_h = mean_confidence_interval(total_accuracy_vector)
-print("Aver_accuracy:", aver_accuracy, "Aver_h", aver_h[0])
-print("Aver_accuracy:", aver_accuracy, "Aver_h", aver_h[0], file=F_txt)
+aver_accuracy, _ = mean_confidence_interval(total_accuracy_vector)
+print("Aver_accuracy:", aver_accuracy, "Aver_h", total_h.mean())
+print("Aver_accuracy:", aver_accuracy, "Aver_h", total_h.mean(), file=F_txt)
 F_txt.close()
 
 # ============================================== Testing End ==========================================
