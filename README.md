@@ -19,7 +19,7 @@ We provide a PyTorch implementation of DN4 for few-shot learning. If you use thi
 
 - Clone this repo:
 ```bash
-git clone https://github.com/WenbinLee/DN4
+git clone https://github.com/WenbinLee/DN4.git
 cd DN4
 ```
 
