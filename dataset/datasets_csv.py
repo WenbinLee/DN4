@@ -8,6 +8,8 @@ import random
 from PIL import Image
 import pdb
 import csv
+import sys
+sys.dont_write_bytecode = True
 
 
 
