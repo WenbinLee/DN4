@@ -36,6 +36,8 @@ import time
 from torch import autograd
 from PIL import ImageFile
 import pdb
+import sys
+sys.dont_write_bytecode = True
 
 
 # ============================ Data & Networks =====================================
