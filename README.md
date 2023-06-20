@@ -5,7 +5,7 @@ If you use this code, please cite:
 
 [Revisiting Local Descriptor based Image-to-Class Measure for Few-shot Learning](http://cs.nju.edu.cn/rl/people/liwb/CVPR19.pdf).<br> 
 [Wenbin Li](https://cs.nju.edu.cn/liwenbin/), Lei Wang, Jinglin Xu, Jing Huo, Yang Gao and Jiebo Luo. In CVPR 2019.<br> 
-<img src='flowchart.bmp' width=600/>
+<img src='DN4_2019_Version/imgs/Flowchart.bmp' width=600/>
 
 
 ## Prerequisites
