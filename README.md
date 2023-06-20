@@ -1,6 +1,7 @@
 # DN4 in PyTorch (2023 Version)
 
-We provide a PyTorch implementation of DN4 for few-shot learning. If you use this code for your research, please cite: 
+We provide a PyTorch implementation of DN4 for few-shot learning.
+If you use this code, please cite: 
 
 [Revisiting Local Descriptor based Image-to-Class Measure for Few-shot Learning](http://cs.nju.edu.cn/rl/people/liwb/CVPR19.pdf).<br> 
 [Wenbin Li](https://cs.nju.edu.cn/liwenbin/), Lei Wang, Jinglin Xu, Jing Huo, Yang Gao and Jiebo Luo. In CVPR 2019.<br> 
