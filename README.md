@@ -24,7 +24,7 @@ git clone https://github.com/WenbinLee/DN4.git
 cd DN4
 ```
 
-- Install [PyTorch](http://pytorch.org) 1.0 and other dependencies.
+- Install [PyTorch](http://pytorch.org) 1.7.0 and other dependencies.
 
 ### Datasets
 [Caltech-UCSD Birds-200-2011](https://data.caltech.edu/records/20098), [Standford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html), [Standford Dogs](http://vision.stanford.edu/aditya86/ImageNetDogs/main.html), [*mini*ImageNet](https://arxiv.org/abs/1606.04080v2) and [*tiered*ImageNet](https://arxiv.org/abs/1803.00676) are available at [Google Drive](https://drive.google.com/drive/u/1/folders/1SEoARH5rADckI-_gZSQRkLclrunL-yb0) and [百度网盘(提取码：yr1w)](https://pan.baidu.com/s/1M3jFo2OI5GTOpytxgtO1qA).
