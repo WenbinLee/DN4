@@ -80,7 +80,7 @@ python Test_DN4.py --resume ./results/SGD_Cosine_Lr0.05_DN4_Conv64F_Local_Epoch_
 
 
 
-- The results on the miniImageNet dataset (If you set neighbor_k as 1, you may get better results in some cases): 
+- The results on the miniImageNet dataset reported in the orinigal paper: 
 <img src='DN4_2019_Version/imgs/Results_miniImageNet2.bmp' align="center" width=710>
 
 
