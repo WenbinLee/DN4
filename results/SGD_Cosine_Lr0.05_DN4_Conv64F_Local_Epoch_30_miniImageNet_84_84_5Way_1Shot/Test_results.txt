@@ -1,0 +1,94 @@
+========================================== Start Test ==========================================
+
+=> loading checkpoint './results/SGD_Cosine_Lr0.05_DN4_Conv64F_Local_Epoch_30_miniImageNet_84_84_5Way_1Shot/model_best.pth.tar'
+=> loaded checkpoint './results/SGD_Cosine_Lr0.05_DN4_Conv64F_Local_Epoch_30_miniImageNet_84_84_5Way_1Shot/model_best.pth.tar' (epoch 29)
+Namespace(adam=False, aug_shot_num=20, beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, classifier_model='DN4', cosine=True, cuda=True, current_epoch=29, data_name='miniImageNet', dataset_dir='/data1/Liwenbin/Datasets/miniImageNet--ravi', encoder_model='Conv64F_Local', episodeSize=1, episode_test_num=1000, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.05, lr_decay_epochs=[60, 80], lr_decay_rate=0.1, mode='train', momentum=0.9, nc=3, neighbor_k=3, ngpu=1, outf='./results/SGD_Cosine_Lr0.05_DN4_Conv64F_Local_Epoch_30_miniImageNet_84_84_5Way_1Shot', print_freq=100, query_num=15, resume='', shot_num=1, start_epoch=0, test_aug=False, testepisodeSize=1, train_aug=True, way_num=5, weight_decay=0.0005, workers=4)
+Fewshot_model(
+  (features): Conv64F_Local(
+    (features): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2, inplace=True)
+      (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): LeakyReLU(negative_slope=0.2, inplace=True)
+      (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): LeakyReLU(negative_slope=0.2, inplace=True)
+      (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+  )
+  (classifier): ImgtoClass_Metric()
+)
+==================== The 0-th round ====================
+Val-(29): [100/1000]	Time 0.02 (0.12)	Loss 1.34 (1.11)	Prec@1 45.33 (53.72)
+Val-(29): [200/1000]	Time 0.03 (0.11)	Loss 1.09 (1.14)	Prec@1 62.67 (52.50)
+Val-(29): [300/1000]	Time 0.03 (0.10)	Loss 1.06 (1.16)	Prec@1 57.33 (51.86)
+Val-(29): [400/1000]	Time 0.22 (0.10)	Loss 0.89 (1.16)	Prec@1 68.00 (52.31)
+Val-(29): [500/1000]	Time 0.08 (0.10)	Loss 1.12 (1.16)	Prec@1 60.00 (52.18)
+Val-(29): [600/1000]	Time 0.06 (0.10)	Loss 0.99 (1.16)	Prec@1 62.67 (52.54)
+Val-(29): [700/1000]	Time 0.02 (0.10)	Loss 1.19 (1.16)	Prec@1 44.00 (52.43)
+Val-(29): [800/1000]	Time 0.02 (0.10)	Loss 0.87 (1.16)	Prec@1 62.67 (52.36)
+Val-(29): [900/1000]	Time 0.25 (0.10)	Loss 1.05 (1.16)	Prec@1 48.00 (52.41)
+ * Prec@1 52.21 Best_prec1 50.33
+Test accuracy: 52.206673 h: 0.621866 
+
+==================== The 1-th round ====================
+Val-(29): [100/1000]	Time 0.02 (0.11)	Loss 1.42 (1.18)	Prec@1 33.33 (53.02)
+Val-(29): [200/1000]	Time 0.02 (0.10)	Loss 0.88 (1.18)	Prec@1 69.33 (52.31)
+Val-(29): [300/1000]	Time 0.21 (0.10)	Loss 1.19 (1.18)	Prec@1 52.00 (52.14)
+Val-(29): [400/1000]	Time 0.02 (0.10)	Loss 1.18 (1.18)	Prec@1 53.33 (51.84)
+Val-(29): [500/1000]	Time 0.06 (0.10)	Loss 1.22 (1.19)	Prec@1 46.67 (51.67)
+Val-(29): [600/1000]	Time 0.02 (0.10)	Loss 1.09 (1.18)	Prec@1 54.67 (51.82)
+Val-(29): [700/1000]	Time 0.10 (0.10)	Loss 1.42 (1.18)	Prec@1 36.00 (51.87)
+Val-(29): [800/1000]	Time 0.02 (0.10)	Loss 1.31 (1.18)	Prec@1 42.67 (51.94)
+Val-(29): [900/1000]	Time 0.03 (0.10)	Loss 1.14 (1.18)	Prec@1 45.33 (51.97)
+ * Prec@1 51.90 Best_prec1 50.33
+Test accuracy: 51.901333 h: 0.633740 
+
+==================== The 2-th round ====================
+Val-(29): [100/1000]	Time 0.22 (0.10)	Loss 1.01 (1.15)	Prec@1 56.00 (53.64)
+Val-(29): [200/1000]	Time 0.02 (0.09)	Loss 1.20 (1.18)	Prec@1 45.33 (52.54)
+Val-(29): [300/1000]	Time 0.02 (0.09)	Loss 1.10 (1.18)	Prec@1 56.00 (52.10)
+Val-(29): [400/1000]	Time 0.02 (0.09)	Loss 1.07 (1.18)	Prec@1 60.00 (52.48)
+Val-(29): [500/1000]	Time 0.02 (0.09)	Loss 1.10 (1.18)	Prec@1 54.67 (52.43)
+Val-(29): [600/1000]	Time 0.02 (0.09)	Loss 1.19 (1.18)	Prec@1 54.67 (52.40)
+Val-(29): [700/1000]	Time 0.02 (0.09)	Loss 1.17 (1.17)	Prec@1 53.33 (52.58)
+Val-(29): [800/1000]	Time 0.20 (0.09)	Loss 1.29 (1.18)	Prec@1 49.33 (52.26)
+Val-(29): [900/1000]	Time 0.25 (0.09)	Loss 1.57 (1.18)	Prec@1 37.33 (52.12)
+ * Prec@1 52.08 Best_prec1 50.33
+Test accuracy: 52.081333 h: 0.622958 
+
+==================== The 3-th round ====================
+Val-(29): [100/1000]	Time 0.05 (0.10)	Loss 1.72 (1.15)	Prec@1 37.33 (53.80)
+Val-(29): [200/1000]	Time 0.02 (0.10)	Loss 0.76 (1.16)	Prec@1 77.33 (53.14)
+Val-(29): [300/1000]	Time 0.02 (0.09)	Loss 1.19 (1.16)	Prec@1 54.67 (52.66)
+Val-(29): [400/1000]	Time 0.29 (0.09)	Loss 1.05 (1.16)	Prec@1 57.33 (52.61)
+Val-(29): [500/1000]	Time 0.11 (0.09)	Loss 0.90 (1.17)	Prec@1 69.33 (52.30)
+Val-(29): [600/1000]	Time 0.19 (0.09)	Loss 1.14 (1.17)	Prec@1 48.00 (52.35)
+Val-(29): [700/1000]	Time 0.02 (0.09)	Loss 1.12 (1.17)	Prec@1 58.67 (52.33)
+Val-(29): [800/1000]	Time 0.03 (0.09)	Loss 1.12 (1.17)	Prec@1 42.67 (52.32)
+Val-(29): [900/1000]	Time 0.02 (0.09)	Loss 1.06 (1.17)	Prec@1 57.33 (52.21)
+ * Prec@1 52.09 Best_prec1 50.33
+Test accuracy: 52.091999 h: 0.621697 
+
+==================== The 4-th round ====================
+Val-(29): [100/1000]	Time 0.02 (0.10)	Loss 1.44 (1.21)	Prec@1 34.67 (50.19)
+Val-(29): [200/1000]	Time 0.02 (0.10)	Loss 1.64 (1.20)	Prec@1 36.00 (50.75)
+Val-(29): [300/1000]	Time 0.21 (0.10)	Loss 1.57 (1.18)	Prec@1 22.67 (51.54)
+Val-(29): [400/1000]	Time 0.14 (0.09)	Loss 0.85 (1.18)	Prec@1 76.00 (51.87)
+Val-(29): [500/1000]	Time 0.36 (0.09)	Loss 1.24 (1.17)	Prec@1 53.33 (51.85)
+Val-(29): [600/1000]	Time 0.02 (0.09)	Loss 0.82 (1.18)	Prec@1 72.00 (51.76)
+Val-(29): [700/1000]	Time 0.02 (0.09)	Loss 0.83 (1.18)	Prec@1 68.00 (51.68)
+Val-(29): [800/1000]	Time 0.30 (0.09)	Loss 1.60 (1.19)	Prec@1 26.67 (51.64)
+Val-(29): [900/1000]	Time 0.18 (0.09)	Loss 1.27 (1.18)	Prec@1 40.00 (51.66)
+ * Prec@1 51.61 Best_prec1 50.33
+Test accuracy: 51.610668 h: 0.607089 
+
+Mean_accuracy: 51.978401 h: 0.621470
+===================================== Test is END =====================================
+
