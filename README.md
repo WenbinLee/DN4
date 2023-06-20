@@ -4,7 +4,7 @@ We provide a PyTorch implementation of DN4 for few-shot learning. If you use thi
 
 [Revisiting Local Descriptor based Image-to-Class Measure for Few-shot Learning](http://cs.nju.edu.cn/rl/people/liwb/CVPR19.pdf).<br> 
 [Wenbin Li](https://cs.nju.edu.cn/liwenbin/), Lei Wang, Jinglin Xu, Jing Huo, Yang Gao and Jiebo Luo. In CVPR 2019.<br> 
-<img src='imgs/Flowchart.bmp' width=600/>
+<img src='flowchart.bmp' width=600/>
 
 
 ## Prerequisites
@@ -30,21 +30,60 @@ cd DN4
 
 
 ###  miniImageNet Few-shot Classification
-- Train a 5-way 1-shot model based on Conv64F or ResNet256F:
+- Train a 5-way 1-shot model based on Conv64:
 ```bash
-python DN4_Train_5way1shot.py --dataset_dir ./datasets/miniImageNet --data_name miniImageNet
-or
-python DN4_Train_5way1shot_Resnet.py --dataset_dir ./datasets/miniImageNet --data_name miniImageNet
+python Train_DN4.py --dataset_dir ./path/to/miniImageNet --data_name miniImageNet --encoder_model Conv64F_Local --way_num 5 --shot_num 1
 ```
-- Test the model (specify the dataset_dir, basemodel, and data_name first):
+- Train a 5-way 1-shot model based on ResNet12:
 ```bash
-python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_Conv64F_5Way_1Shot_K3/model_best.pth.tar --basemodel Conv64F
-or
-python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_ResNet256F_5Way_1Shot_K3/model_best.pth.tar --basemodel ResNet256F
+python Train_DN4.py --dataset_dir ./path/to/miniImageNet --data_name miniImageNet --encoder_model ResNet12 --way_num 5 --shot_num 1
+```
+- Test the model (specify the dataset_dir, encoder_model, and data_name first):
+```bash
+python Test_DN4.py --resume ./results/SGD_Cosine_Lr0.05_DN4_Conv64F_Local_Epoch_30_miniImageNet_84_84_5Way_1Shot/ --encoder_model Conv64F_Local
 ```
 
+
+## Latest results on miniImageNet (2023)
+(Compared to the originally reported results in the paper. * denotes that ResNet256F is used.)
+<table>
+  <tr>
+      <td rowspan="2">Method</td>
+      <td rowspan="2">Backbone</td>
+      <td colspan="2">5-way 1-shot</td>
+      <td colspan="2">5-way 5-shot</td>
+  </tr>
+  <tr>
+      <td>2019 Version</td>
+      <td>2023 Version</td>
+      <td>2019 Version</td>
+      <td>2023 Version</td>
+  </tr>
+
+  <tr>
+      <td rowspan="2">DN4</td>
+      <td> Conv64F_Local </td>
+      <td> 51.24 </td>
+      <td> 51.97 </td>
+      <td> 71.02 </td>
+      <td> 73.19 </td>
+  </tr>
+  <tr>
+      <td> ResNet12 </td>
+      <td> 54.37* </td>
+      <td> 61.23 </td>
+      <td> 74.44* </td>
+      <td> 75.66 </td>
+  </tr>
+</table>
+
+
+
+
+
+
 - The results on the miniImageNet dataset (If you set neighbor_k as 1, you may get better results in some cases): 
-<img src='imgs/Results_miniImageNet2.bmp' align="center" width=900>
+<img src='DN4_2019_Version/imgs/Results_miniImageNet2.bmp' align="center" width=700>
 
 
 
