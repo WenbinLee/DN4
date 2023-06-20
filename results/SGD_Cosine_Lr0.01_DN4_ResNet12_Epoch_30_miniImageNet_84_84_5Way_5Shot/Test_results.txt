@@ -1,0 +1,146 @@
+========================================== Start Test ==========================================
+
+=> loading checkpoint './results/SGD_Cosine_Lr0.01_DN4_ResNet12_Epoch_30_miniImageNet_84_84_5Way_5Shot/model_best.pth.tar'
+=> loaded checkpoint './results/SGD_Cosine_Lr0.01_DN4_ResNet12_Epoch_30_miniImageNet_84_84_5Way_5Shot/model_best.pth.tar' (epoch 28)
+Namespace(adam=False, aug_shot_num=20, beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, classifier_model='DN4', cosine=True, cuda=True, current_epoch=29, data_name='miniImageNet', dataset_dir='/data1/Liwenbin/Datasets/miniImageNet--ravi', encoder_model='ResNet12', episodeSize=1, episode_test_num=1000, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.01, lr_decay_epochs=[60, 80], lr_decay_rate=0.1, mode='train', momentum=0.9, nc=3, neighbor_k=3, ngpu=1, outf='./results/SGD_Cosine_Lr0.01_DN4_ResNet12_Epoch_30_miniImageNet_84_84_5Way_5Shot', print_freq=100, query_num=15, resume='', shot_num=5, start_epoch=0, test_aug=False, testepisodeSize=1, train_aug=True, way_num=5, weight_decay=0.0005, workers=4)
+Fewshot_model(
+  (features): ResNet_84(
+    (layer1): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): LeakyReLU(negative_slope=0.1)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (maxpool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+        (downsample): Sequential(
+          (0): Conv2d(3, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (DropBlock): DropBlock()
+      )
+    )
+    (layer2): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): LeakyReLU(negative_slope=0.1)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn3): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (maxpool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+        (downsample): Sequential(
+          (0): Conv2d(64, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (DropBlock): DropBlock()
+      )
+    )
+    (layer3): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(160, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): LeakyReLU(negative_slope=0.1)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn3): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (maxpool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+        (downsample): Sequential(
+          (0): Conv2d(160, 320, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (DropBlock): DropBlock()
+      )
+    )
+    (layer4): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(320, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): LeakyReLU(negative_slope=0.1)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn3): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (maxpool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+        (downsample): Sequential(
+          (0): Conv2d(320, 640, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (DropBlock): DropBlock()
+      )
+    )
+  )
+  (classifier): ImgtoClass_Metric()
+)
+==================== The 0-th round ====================
+Val-(28): [100/1000]	Time 0.06 (0.13)	Loss 0.71 (0.65)	Prec@1 62.67 (74.59)
+Val-(28): [200/1000]	Time 0.06 (0.12)	Loss 0.42 (0.66)	Prec@1 85.33 (74.28)
+Val-(28): [300/1000]	Time 0.06 (0.12)	Loss 0.81 (0.64)	Prec@1 70.67 (74.85)
+Val-(28): [400/1000]	Time 0.24 (0.11)	Loss 0.53 (0.65)	Prec@1 80.00 (74.90)
+Val-(28): [500/1000]	Time 0.29 (0.11)	Loss 0.94 (0.65)	Prec@1 66.67 (74.95)
+Val-(28): [600/1000]	Time 0.06 (0.11)	Loss 0.68 (0.64)	Prec@1 68.00 (75.30)
+Val-(28): [700/1000]	Time 0.06 (0.11)	Loss 0.70 (0.65)	Prec@1 74.67 (75.08)
+Val-(28): [800/1000]	Time 0.06 (0.11)	Loss 0.42 (0.65)	Prec@1 86.67 (75.14)
+Val-(28): [900/1000]	Time 0.06 (0.11)	Loss 0.69 (0.64)	Prec@1 66.67 (75.23)
+ * Prec@1 75.18 Best_prec1 79.01
+Test accuracy: 75.177338 h: 0.484989 
+
+==================== The 1-th round ====================
+Val-(28): [100/1000]	Time 0.23 (0.12)	Loss 0.46 (0.63)	Prec@1 81.33 (75.18)
+Val-(28): [200/1000]	Time 0.06 (0.11)	Loss 1.15 (0.63)	Prec@1 57.33 (75.66)
+Val-(28): [300/1000]	Time 0.23 (0.11)	Loss 0.65 (0.63)	Prec@1 74.67 (75.69)
+Val-(28): [400/1000]	Time 0.24 (0.11)	Loss 0.56 (0.63)	Prec@1 76.00 (75.73)
+Val-(28): [500/1000]	Time 0.06 (0.11)	Loss 0.48 (0.63)	Prec@1 84.00 (75.73)
+Val-(28): [600/1000]	Time 0.10 (0.11)	Loss 0.98 (0.63)	Prec@1 57.33 (75.85)
+Val-(28): [700/1000]	Time 0.06 (0.11)	Loss 0.53 (0.63)	Prec@1 80.00 (75.68)
+Val-(28): [800/1000]	Time 0.08 (0.11)	Loss 0.58 (0.63)	Prec@1 73.33 (75.81)
+Val-(28): [900/1000]	Time 0.28 (0.11)	Loss 0.40 (0.63)	Prec@1 86.67 (75.94)
+ * Prec@1 75.93 Best_prec1 79.01
+Test accuracy: 75.931999 h: 0.497722 
+
+==================== The 2-th round ====================
+Val-(28): [100/1000]	Time 0.06 (0.12)	Loss 0.78 (0.63)	Prec@1 64.00 (75.63)
+Val-(28): [200/1000]	Time 0.06 (0.11)	Loss 1.04 (0.62)	Prec@1 58.67 (76.11)
+Val-(28): [300/1000]	Time 0.06 (0.11)	Loss 0.42 (0.62)	Prec@1 84.00 (76.10)
+Val-(28): [400/1000]	Time 0.06 (0.11)	Loss 0.43 (0.62)	Prec@1 89.33 (76.03)
+Val-(28): [500/1000]	Time 0.06 (0.11)	Loss 0.70 (0.63)	Prec@1 76.00 (75.74)
+Val-(28): [600/1000]	Time 0.06 (0.11)	Loss 0.46 (0.63)	Prec@1 80.00 (75.63)
+Val-(28): [700/1000]	Time 0.06 (0.11)	Loss 0.68 (0.63)	Prec@1 73.33 (75.49)
+Val-(28): [800/1000]	Time 0.06 (0.11)	Loss 0.63 (0.63)	Prec@1 80.00 (75.52)
+Val-(28): [900/1000]	Time 0.06 (0.11)	Loss 0.35 (0.63)	Prec@1 89.33 (75.61)
+ * Prec@1 75.61 Best_prec1 79.01
+Test accuracy: 75.614670 h: 0.494373 
+
+==================== The 3-th round ====================
+Val-(28): [100/1000]	Time 0.20 (0.12)	Loss 0.81 (0.61)	Prec@1 70.67 (77.37)
+Val-(28): [200/1000]	Time 0.06 (0.12)	Loss 0.55 (0.61)	Prec@1 80.00 (77.21)
+Val-(28): [300/1000]	Time 0.06 (0.11)	Loss 0.51 (0.62)	Prec@1 89.33 (76.69)
+Val-(28): [400/1000]	Time 0.06 (0.11)	Loss 0.82 (0.63)	Prec@1 64.00 (76.38)
+Val-(28): [500/1000]	Time 0.06 (0.11)	Loss 0.83 (0.63)	Prec@1 70.67 (76.36)
+Val-(28): [600/1000]	Time 0.11 (0.11)	Loss 0.60 (0.62)	Prec@1 76.00 (76.27)
+Val-(28): [700/1000]	Time 0.06 (0.11)	Loss 0.41 (0.63)	Prec@1 85.33 (76.00)
+Val-(28): [800/1000]	Time 0.06 (0.11)	Loss 0.89 (0.63)	Prec@1 68.00 (76.05)
+Val-(28): [900/1000]	Time 0.06 (0.11)	Loss 0.50 (0.63)	Prec@1 81.33 (75.89)
+ * Prec@1 75.86 Best_prec1 79.01
+Test accuracy: 75.863998 h: 0.491147 
+
+==================== The 4-th round ====================
+Val-(28): [100/1000]	Time 0.21 (0.12)	Loss 0.82 (0.63)	Prec@1 62.67 (76.01)
+Val-(28): [200/1000]	Time 0.06 (0.12)	Loss 0.90 (0.65)	Prec@1 69.33 (75.33)
+Val-(28): [300/1000]	Time 0.06 (0.12)	Loss 0.56 (0.64)	Prec@1 80.00 (75.90)
+Val-(28): [400/1000]	Time 0.06 (0.12)	Loss 1.05 (0.63)	Prec@1 69.33 (75.95)
+Val-(28): [500/1000]	Time 0.06 (0.11)	Loss 1.07 (0.63)	Prec@1 60.00 (75.80)
+Val-(28): [600/1000]	Time 0.06 (0.11)	Loss 0.69 (0.63)	Prec@1 80.00 (75.94)
+Val-(28): [700/1000]	Time 0.06 (0.11)	Loss 0.75 (0.63)	Prec@1 65.33 (75.91)
+Val-(28): [800/1000]	Time 0.06 (0.11)	Loss 0.34 (0.63)	Prec@1 85.33 (75.93)
+Val-(28): [900/1000]	Time 0.24 (0.11)	Loss 0.72 (0.63)	Prec@1 73.33 (75.79)
+ * Prec@1 75.73 Best_prec1 79.01
+Test accuracy: 75.732002 h: 0.479748 
+
+Mean_accuracy: 75.664001 h: 0.489596
+===================================== Test is END =====================================
+
