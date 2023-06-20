@@ -1,4 +1,4 @@
-# DN4 in PyTorch
+# DN4 in PyTorch (2023 Version)
 
 We provide a PyTorch implementation of DN4 for few-shot learning. If you use this code for your research, please cite: 
 
@@ -9,8 +9,8 @@ We provide a PyTorch implementation of DN4 for few-shot learning. If you use thi
 
 ## Prerequisites
 - Linux
-- Python 3
-- Pytorch 0.4 or 1.0
+- Python 3.8
+- Pytorch 1.7.0
 - GPU + CUDA CuDNN
 - pillow, torchvision, scipy, numpy
 
@@ -26,11 +26,7 @@ cd DN4
 - Install [PyTorch](http://pytorch.org) 1.0 and other dependencies.
 
 ### Datasets
-- [miniImageNet](https://drive.google.com/file/d/1fUBrpv8iutYwdL4xE1rX_R9ef6tyncX9/view). 
-- [StanfordDog](http://vision.stanford.edu/aditya86/ImageNetDogs/).
-- [StanfordCar](https://ai.stanford.edu/~jkrause/cars/car_dataset.html).
-- [CUB-200](http://www.vision.caltech.edu/visipedia/CUB-200.html). <br>
-Thanks [Victor Garcia](https://github.com/vgsatorras/few-shot-gnn) for providing the miniImageNet dataset. In our paper, we just used the CUB-200 dataset. In fact, there is a newer revision of this dataset with more images, see [Caltech-UCSD Birds-200-2011](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html). Note, if you use these datasets, please cite the corresponding papers. 
+[Caltech-UCSD Birds-200-2011](https://data.caltech.edu/records/20098), [Standford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html), [Standford Dogs](http://vision.stanford.edu/aditya86/ImageNetDogs/main.html), [*mini*ImageNet](https://arxiv.org/abs/1606.04080v2) and [*tiered*ImageNet](https://arxiv.org/abs/1803.00676) are available at [Google Drive](https://drive.google.com/drive/u/1/folders/1SEoARH5rADckI-_gZSQRkLclrunL-yb0) and [百度网盘(提取码：yr1w)](https://pan.baidu.com/s/1M3jFo2OI5GTOpytxgtO1qA).
 
 
 ###  miniImageNet Few-shot Classification
@@ -51,34 +47,20 @@ python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_ResNet256F_5Way
 <img src='imgs/Results_miniImageNet2.bmp' align="center" width=900>
 
 
-###  Fine-grained Few-shot Classification
-- Data prepocessing (e.g., StanfordDog)
- - Specify the path of the dataset and the saving path.
- - Run the preprocessing script.
-```bash
-#!./dataset/StanfordDog_prepare_csv.py
-python ./dataset/StanfordDog_prepare_csv.py
-```
-- Train a 5-way 1-shot model:
-```bash
-python DN4_Train_5way1shot.py --dataset_dir ./datasets/StanfordDog --data_name StanfordDog
-```
-- Test the model (specify the dataset_dir and data_name first):
-```bash
-python DN4_Test_5way1shot.py --resume ./results/DN4_StanfordDog_Conv64F_5_Way_1_Shot/model_best.pth.tar --basemodel Conv64F
-```
-- The results on the fine-grained datasets: 
-<img src='imgs/Results_finegrained.bmp' align="center" width=900>
-
-
 
 ## Citation
 If you use this code for your research, please cite our paper.
 ```
-@inproceedings{li2019DN4,
-  title={Revisiting Local Descriptor based Image-to-Class Measure for Few-shot Learning},
-  author={Li, Wenbin and Wang, Lei and Xu, Jinglin and Huo, Jing and Gao Yang and Luo, Jiebo},
-  booktitle={CVPR},
-  year={2019}
+@inproceedings{DN4_CVPR_2019,
+  author       = {Wenbin Li and
+                  Lei Wang and
+                  Jinglin Xu and
+                  Jing Huo and
+                  Yang Gao and
+                  Jiebo Luo},
+  title        = {Revisiting Local Descriptor Based Image-To-Class Measure for Few-Shot Learning},
+  booktitle    = {{IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages        = {7260--7268},
+  year         = {2019}
 }
 ```
